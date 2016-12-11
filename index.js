@@ -36,7 +36,6 @@ hexo.extend.tag.register('figure', function(args) {
   }
 
   function figureTag(args) {
-
     var classes = [];
     var src;
     var width;
@@ -48,6 +47,8 @@ hexo.extend.tag.register('figure', function(args) {
     while (args.length && rClass.test(args[0])) {
       classes.push(args.shift());
     }
+
+    classes = classes.join(' ');
 
     // Get path of the image
     src = makeUrl(args.shift());
@@ -79,10 +80,21 @@ hexo.extend.tag.register('figure', function(args) {
       title: title,
       alt: alt
     };
+    var figHtml = '<figure';
 
-    return '<figure class="' + classes.join(' ') + '">' +
-    htmlTag('img', imgAttrs) +
-    '<figcaption><p>' + title + '</p></figcaption></figure>';
+    if (classes) {
+      figHtml += ' class="' + classes + '"';
+    }
+
+    figHtml += '>' + htmlTag('img', imgAttrs);
+
+    if (title) {
+      figHtml += '<figcaption><p>' + title + '</p></figcaption>';
+    }
+
+    figHtml += '</figure>';
+
+    return figHtml;
   };
 
   return figureTag(args);
