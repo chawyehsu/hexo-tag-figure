@@ -1,12 +1,23 @@
 {
   "name": "hexo-tag-figure",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "index",
-  "author": {
-    "name": "h404bi"
-  },
+  "author": "h404bi",
   "license": "MIT",
   "dependencies": {
     "hexo-util": "^0.6.0"
-  }
+  },
+  "description": "Figure image tag plugin for Hexo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h404bi/hexo-tag-figure.git"
+  },
+  "keywords": [
+    "hexo",
+    "tag",
+    "plugin"
+  ]
 }
