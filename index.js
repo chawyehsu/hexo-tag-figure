@@ -1,8 +1,7 @@
 'use strict';
 
 var url = require('url');
-var util = require('hexo-util');
-var htmlTag = util.htmlTag;
+var htmlTag = require('./lib/html_tag');
 
 var rClass = /^[A-Za-z0-9-_]+$/;
 var rUrl = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))?)/;

@@ -4,9 +4,7 @@
   "main": "index",
   "author": "h404bi",
   "license": "MIT",
-  "dependencies": {
-    "hexo-util": "^0.6.0"
-  },
+  "dependencies": {},
   "description": "Figure image tag plugin for Hexo",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
