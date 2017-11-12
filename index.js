@@ -5,7 +5,6 @@ var url = require('url');
 var htmlTag = require('./lib/html_tag');
 
 var rClass = /^[A-Za-z0-9-_]+$/;
-var rUrl = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[.\!\/\\w]*))?)/;
 var rSize = /^\d+(?:|\.\d+)(?:%)?$/;
 var rMeta = /["']?([^"']+)?["']?\s*["']?([^"']+)?["']?/;
 
@@ -37,11 +36,7 @@ hexo.extend.tag.register('figure', function(args) {
 
   function figureTag(args) {
     var classes = [];
-    var src;
-    var width;
-    var height;
-    var title;
-    var alt;
+    var src, width, height, title, alt;
 
     // Find all class names
     while (args.length && rClass.test(args[0])) {
@@ -95,7 +90,7 @@ hexo.extend.tag.register('figure', function(args) {
     figHtml += '</figure>';
 
     return figHtml;
-  };
+  }
 
   return figureTag(args);
 });
