@@ -37,11 +37,16 @@ hexo.extend.tag.register('figure', function(args) {
 
   function figureTag(args) {
     var classes = []
+    var isLazy = false
     var src, width, height, title, alt
 
     // Find all class names
     while (args.length && rClass.test(args[0])) {
       classes.push(args.shift())
+    }
+
+    if (includes(classes, 'lazyload')) {
+      isLazy = true
     }
 
     classes = classes.join(' ')
@@ -80,9 +85,10 @@ hexo.extend.tag.register('figure', function(args) {
 
     if (classes) {
       figHtml += ' class="' + classes + '"'
-      if (includes(classes, 'lazyload')) {
+      if (isLazy) {
         imgAttrs = {
           'data-src': src,
+          src: 'data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=',
           width: width,
           height: height,
           title: title,
